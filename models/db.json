@@ -22,7 +22,7 @@
       "artist": "Hermiston LLC",
       "year": 1990,
       "img": "http://lorempixel.com/640/480/nightlife",
-      "price": 2
+      "price": 22
     },
     {
       "id": "Wed Apr 22 2020 10:18:23 GMT+0200 (Central European Summer Time)",
@@ -39,6 +39,23 @@
       "year": 1981,
       "img": "http://lorempixel.com/640/480/nightlife",
       "price": 930
+    }
+  ],
+  "orders": [
+    {
+      "id": "Wed Apr 22 2020 11:47:19 GMT+0200 (Central European Summer Time)",
+      "title": "Direct Markets Agent",
+      "artist": "O'Keefe and Sons",
+      "year": 1962,
+      "img": "http://lorempixel.com/640/480/nightlife",
+      "price": 114
+    }
+  ],
+  "users": [
+    {
+      "username": "dshacham",
+      "password": "12345",
+      "id": "Wed Apr 22 2020 11:50:09 GMT+0200 (Central European Summer Time)"
     }
   ]
 }
