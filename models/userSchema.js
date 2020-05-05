@@ -3,6 +3,7 @@ const { Schema } = mongoose; // const Schema = mongoose.Schema
 const AddressSchema = require("./addressSchema");
 const jwt = require("jsonwebtoken");
 const { encrypt, compare } = require("../lib/encryption");
+const env = require("../config/config");
 
 //creating an instance of schema and defining the data we want in the db:
 const UserSchema = new Schema(
@@ -50,7 +51,7 @@ UserSchema.virtual("fullName").get(function () {
 UserSchema.methods.generateAuthToken = function () { //can't use arrow function here
     const user = this; //refers to the UserSchema
 
-    const token = jwt.sign({ _id: user._id }, "secretKey").toString();
+    const token = jwt.sign({ _id: user._id }, env.jwt_key).toString();
 
     user.tokens.push({ token });
 
@@ -85,7 +86,7 @@ UserSchema.statics.findByToken = function (token) { //static methods can only be
     let decoded;
 
     try {
-        decoded = jwt.verify(token, "secretKey");
+        decoded = jwt.verify(token, env.jwt_key);
     }
     catch (e) {
         return;
